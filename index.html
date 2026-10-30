@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A Flower for Zin</title>
+<meta name="description" content="A little world, made just for Zin — a Saya-inspired birthday garden. 30.10">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="locked">
+
+<div class="grain" aria-hidden="true"></div>
+<div class="vignette" aria-hidden="true"></div>
+<canvas id="petals" aria-hidden="true"></canvas>
+<div class="curtain" id="curtain" aria-hidden="true"></div>
+
+<nav class="nav" id="nav" aria-label="Chapters">
+  <a href="#world"><span>I</span> Her world</a>
+  <a href="#reveal"><span>II</span> Reveal</a>
+  <a href="#letter"><span>III</span> Letter</a>
+  <a href="#garden"><span>IV</span> Garden</a>
+  <a href="#final"><span>V</span> Farewell</a>
+</nav>
+
+<button class="music" id="musicBtn" aria-pressed="false" aria-label="Toggle background music">
+  <span class="music-bars"><i></i><i></i><i></i></span>
+  <span class="music-label">sound off</span>
+</button>
+<!-- Replace with your own track: place music.mp3 next to index.html -->
+<audio id="bgm" src="music.mp3" loop preload="none"></audio>
+
+<!-- I. THE BEGINNING -->
+<section class="opening" id="opening">
+  <div class="opening-art" data-parallax="0.15">
+    <img data-img="opening" alt="">
+  </div>
+  <div class="opening-text">
+    <p class="eyebrow">A Flower for Zin</p>
+    <h1>A little world,<br><em>made just for you.</em></h1>
+    <p class="sub">For Zin — 30.10</p>
+    <button class="enter" id="enterBtn"><span>Enter the garden</span></button>
+  </div>
+</section>
+
+<main id="story" aria-hidden="true">
+
+<!-- II. SAYA'S WORLD -->
+<section class="world" id="world">
+  <div class="world-art reveal-up" data-parallax="0.08">
+    <img data-img="world" alt="" loading="lazy">
+  </div>
+  <div class="world-text reveal-up">
+    <p class="chapter">Chapter I</p>
+    <h2>Her world</h2>
+    <p class="poem">Where walls grow petals<br>and the quiet breathes,<br>a girl waits among the flowers —<br><em>strange, gentle, and entirely herself.</em></p>
+    <p class="note">Beauty does not always look the way we expect. Sometimes it blooms in the places no one else dares to look.</p>
+  </div>
+  <span class="world-mark" aria-hidden="true">沙耶</span>
+</section>
+
+<!-- III. THE BIRTHDAY REVEAL -->
+<section class="reveal" id="reveal">
+  <div class="reveal-art reveal-up">
+    <img data-img="reveal" alt="" loading="lazy">
+  </div>
+  <div class="reveal-text">
+    <svg class="bloom" viewBox="0 0 200 200" aria-hidden="true">
+      <g class="bloom-petals">
+        <path d="M100 100 C80 60 90 25 100 15 C110 25 120 60 100 100Z"/>
+        <path d="M100 100 C80 60 90 25 100 15 C110 25 120 60 100 100Z" transform="rotate(60 100 100)"/>
+        <path d="M100 100 C80 60 90 25 100 15 C110 25 120 60 100 100Z" transform="rotate(120 100 100)"/>
+        <path d="M100 100 C80 60 90 25 100 15 C110 25 120 60 100 100Z" transform="rotate(180 100 100)"/>
+        <path d="M100 100 C80 60 90 25 100 15 C110 25 120 60 100 100Z" transform="rotate(240 100 100)"/>
+        <path d="M100 100 C80 60 90 25 100 15 C110 25 120 60 100 100Z" transform="rotate(300 100 100)"/>
+      </g>
+      <circle cx="100" cy="100" r="7" class="bloom-heart"/>
+    </svg>
+    <p class="chapter">Chapter II</p>
+    <h2 class="hb"><span>Happy</span> <span>Birthday,</span> <em>Zin.</em></h2>
+    <p class="date">30 October</p>
+  </div>
+</section>
+
+<!-- IV. A LETTER FOR ZIN -->
+<section class="letter" id="letter">
+  <div class="letter-paper reveal-up">
+    <p class="chapter">Chapter III</p>
+    <h2>A letter for Zin</h2>
+    <div class="letter-body" id="letterBody" aria-live="polite"></div>
+    <p class="sign">— with warmth, on your day</p>
+  </div>
+</section>
+
+<!-- V. THE GARDEN -->
+<section class="garden" id="garden">
+  <header class="garden-head reveal-up">
+    <p class="chapter">Chapter IV</p>
+    <h2>The garden</h2>
+    <p class="note">Saya, as she has been drawn — in the game itself, and by those who loved it.</p>
+  </header>
+  <div class="gallery" id="gallery"><!-- filled from GALLERY in script.js --></div>
+</section>
+
+<!-- VI. THE FINAL MOMENT -->
+<section class="final" id="final">
+  <div class="final-art" data-parallax="0.12">
+    <img data-img="final" alt="" loading="lazy">
+  </div>
+  <div class="final-text reveal-up">
+    <p class="chapter">Chapter V</p>
+    <p class="final-msg">May your world always have flowers<br><em>worth stopping for.</em></p>
+  </div>
+  <div class="fade-out" aria-hidden="true"></div>
+</section>
+
+<footer class="footer">
+  <p>A Flower for Zin · 30.10</p>
+  <p class="credit">Made by N_skyman (nhat)</p>
+  <p class="sources">Saya no Uta artwork © Nitroplus. Fan illustrations belong to their artists — <span id="sourceLinks"></span></p>
+</footer>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
